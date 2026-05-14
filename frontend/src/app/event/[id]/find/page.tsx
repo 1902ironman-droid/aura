@@ -18,7 +18,7 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 type Step = "payment" | "instagram" | "whatsapp" | "access_granted" | "gallery";
 type Mode = "upload" | "camera";
 
-const anim = { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -20 }, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } };
+const anim = { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -20 }, transition: { duration: 0.5, ease: "easeOut" } };
 
 export default function GuestFlowPage() {
   const { id } = useParams<{ id: string }>();
