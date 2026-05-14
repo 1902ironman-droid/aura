@@ -29,10 +29,10 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 COPY --chown=user . .
 
 # Generate Prisma Client
-RUN prisma generate
+RUN prisma generate --schema=prisma_db/schema.prisma
 
-# Hugging Face uses port 7860 by default
-EXPOSE 7860
+# Railway uses the PORT environment variable
+EXPOSE 8000
 
-# Start FastAPI server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Start FastAPI server with dynamic port support
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
