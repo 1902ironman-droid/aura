@@ -5,7 +5,7 @@ import { useParams, useSearchParams, useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 import { Navbar } from "@/components/layout/Navbar";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ImageIcon, Download, ArrowLeft, Share2, Sparkles, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, ImageIcon, Download, ArrowLeft, Share2, Sparkles, X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { PageLoader, GridSkeleton } from "@/components/ui/Loader";
 import { ModalViewer } from "@/components/ui/ModalViewer";
 
